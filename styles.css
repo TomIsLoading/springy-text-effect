@@ -1,0 +1,125 @@
+/* reset/basic stuff */
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,300,400,700,900");
+
+:root {
+  font-size: 10px;
+  --white: rgb(232, 239, 243);
+  --black: rgb(15, 15, 15);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* the goods */
+#wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.text {
+  font-size: 24rem;
+  font-weight: bold;
+  color: var(--white);
+  user-select: none;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) translateY(-50px);
+  rotate: -15deg;
+}
+
+.base-anim {
+  animation: up-down 2.5s ease-in-out infinite alternate,
+    rotate 5s ease-in-out infinite alternate;
+}
+
+@keyframes up-down {
+  0% {
+    transform: translate(-50%, -50%) translateY(-50px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(50px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    rotate: -15deg;
+  }
+  100% {
+    rotate: 15deg;
+  }
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--white);
+}
+
+/* the rest */
+.nav-bar {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  position: relative;
+  z-index: 50;
+}
+
+.nav-button {
+  background: var(--white);
+  border: none;
+  color: var(--black);
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding: 0.3em 0.9em;
+  text-align: right;
+  cursor: pointer;
+}
+
+.vertical-bar-thingy {
+  font-size: 3rem;
+  font-weight: 300;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  text-transform: uppercase;
+
+  background: var(--white);
+  color: var(--black);
+
+  padding: 0.25em;
+
+  height: 110vh;
+
+  position: absolute;
+  top: -10vh;
+  left: 0;
+  z-index: 50;
+}
+
+.scroll-icon {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  z-index: 50;
+
+  transform: translateX(-50%);
+
+  color: var(--white);
+  opacity: 0.5;
+}
